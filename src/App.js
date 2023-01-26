@@ -1,11 +1,42 @@
-import React from 'react'
+import { ColorModeContext, useMode } from "./theme";
+import { CssBaseline, ThemeProvider } from "@mui/material";
+import { Routes, Route } from "react-router-dom";
+import Topbar from "./scenes/global/Topbar";
+import Sidebar from "./scenes/global/Sidebar";
+import Dashboard from "./scenes/dashboard";
+// import User from "./scenes/user";
+// import Resort from "./scenes/resort";
+// import Booking from "./scenes/booking";
+// import Facilities from "./scenes/facilities";
+// import Rooms from "./scenes/rooms";
+// import Geography from "./scenes/geography";
+// import Calendar from "./scenes/calendar";
 
-export default function App() {
-    return (
-        <div>
-            <h1 className="text-3xl font-bold underline">
-                Hello world!
-            </h1>
+function App() {
+  const [theme, colorMode] = useMode();
+  return (
+    <ColorModeContext.Provider value={colorMode}>
+      <ThemeProvider theme={theme}>
+        <CssBaseline />
+        <div className="app">
+          <Sidebar />
+          <main className="content">
+            <Topbar />
+            <Routes>
+              <Route path="/" element={<Dashboard />} />
+              {/* <Route path="/user" element={<User />} /> */}
+              {/* <Route path="/resort" element={<Resort />} /> */}
+              {/* <Route path="/booking" element={<Booking />} /> */}
+              {/* <Route path="/facilities" element={<Facilities />} /> */}
+              {/* <Route path="/rooms" element={<Rooms />} /> */}
+              {/* <Route path="/geography" element={<Geography />} /> */}
+              {/* <Route path="/calendar" element={<Calendar />} /> */}
+            </Routes>
+          </main>
         </div>
-    )
+      </ThemeProvider>
+    </ColorModeContext.Provider>
+  );
 }
+
+export default App;
