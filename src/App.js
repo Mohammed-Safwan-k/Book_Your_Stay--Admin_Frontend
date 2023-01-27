@@ -5,8 +5,8 @@ import Topbar from "./scenes/global/Topbar";
 import Sidebar from "./scenes/global/Sidebar";
 import Dashboard from "./scenes/dashboard";
 import User from "./scenes/user";
-// import Resort from "./scenes/resort";
-// import Booking from "./scenes/booking";
+import Resort from "./scenes/resort";
+import Booking from "./scenes/booking";
 // import Facilities from "./scenes/facilities";
 // import Rooms from "./scenes/rooms";
 // import Geography from "./scenes/geography";
@@ -25,8 +25,8 @@ function App() {
             <Routes>
               <Route path="/" element={<Dashboard />} />
               <Route path="/user" element={<User />} />
-              {/* <Route path="/resort" element={<Resort />} /> */}
-              {/* <Route path="/booking" element={<Booking />} /> */}
+              <Route path="/resort" element={<Resort />} />
+              <Route path="/booking" element={<Booking />} />
               {/* <Route path="/facilities" element={<Facilities />} /> */}
               {/* <Route path="/rooms" element={<Rooms />} /> */}
               {/* <Route path="/geography" element={<Geography />} /> */}
