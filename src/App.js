@@ -8,10 +8,10 @@ import User from "./scenes/user";
 import Resort from "./scenes/resort";
 import Booking from "./scenes/booking";
 import Facilities from "./scenes/facilities";
+import Coupon from "./scenes/coupon";
 // import Rooms from "./scenes/rooms";
 // import Geography from "./scenes/geography";
 // import Calendar from "./scenes/calendar";
-// import Coupon from "./scenes/coupon";
 
 function App() {
   const [theme, colorMode] = useMode();
@@ -29,10 +29,10 @@ function App() {
               <Route path="/resort" element={<Resort />} />
               <Route path="/booking" element={<Booking />} />
               <Route path="/facilities" element={<Facilities />} />
+              <Route path="/coupon" element={<Coupon />} />
               {/* <Route path="/rooms" element={<Rooms />} /> */}
               {/* <Route path="/geography" element={<Geography />} /> */}
               {/* <Route path="/calendar" element={<Calendar />} /> */}
-              {/* <Route path="/coupon" element={<Coupon />} /> */}
             </Routes>
           </main>
         </div>
