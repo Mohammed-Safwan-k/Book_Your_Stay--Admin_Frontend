@@ -4,7 +4,7 @@ import { Routes, Route } from "react-router-dom";
 import Topbar from "./scenes/global/Topbar";
 import Sidebar from "./scenes/global/Sidebar";
 import Dashboard from "./scenes/dashboard";
-// import User from "./scenes/user";
+import User from "./scenes/user";
 // import Resort from "./scenes/resort";
 // import Booking from "./scenes/booking";
 // import Facilities from "./scenes/facilities";
@@ -24,7 +24,7 @@ function App() {
             <Topbar />
             <Routes>
               <Route path="/" element={<Dashboard />} />
-              {/* <Route path="/user" element={<User />} /> */}
+              <Route path="/user" element={<User />} />
               {/* <Route path="/resort" element={<Resort />} /> */}
               {/* <Route path="/booking" element={<Booking />} /> */}
               {/* <Route path="/facilities" element={<Facilities />} /> */}
