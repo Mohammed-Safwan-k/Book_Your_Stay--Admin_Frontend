@@ -3,6 +3,8 @@ import { Formik } from "formik";
 import * as yup from "yup";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import Header from "../../components/Header";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const initialValues = {
   facility: "",
@@ -17,8 +19,15 @@ const facilitySchema = yup.object().shape({
 const Facilities = () => {
   const isNonMobile = useMediaQuery("(min-width:600px)");
 
-  const handleFormSubmit = (values) => {
+  const handleFormSubmit = async (values) => {
     console.log(values);
+    try {
+      axios
+        .post("http://localhost:5000/admin/addFacilities", { ...values })
+        .then((response) => {});
+    } catch (error) {
+      console.log(error);
+    }
   };
   return (
     <Box m="20px">
@@ -72,10 +81,10 @@ const Facilities = () => {
                 sx={{ gridColumn: "span 4" }}
               />
             </Box>
-            <Box display="flex" justifyContent="end" mt="20px"> 
-                <Button type="submit" color="secondary" variant="contained">
-                    Add New Facility
-                </Button>
+            <Box display="flex" justifyContent="end" mt="20px">
+              <Button type="submit" color="secondary" variant="contained">
+                Add New Facility
+              </Button>
             </Box>
           </form>
         )}
