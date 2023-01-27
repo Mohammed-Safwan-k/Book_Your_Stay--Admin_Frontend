@@ -7,7 +7,7 @@ import Dashboard from "./scenes/dashboard";
 import User from "./scenes/user";
 import Resort from "./scenes/resort";
 import Booking from "./scenes/booking";
-// import Facilities from "./scenes/facilities";
+import Facilities from "./scenes/facilities";
 // import Rooms from "./scenes/rooms";
 // import Geography from "./scenes/geography";
 // import Calendar from "./scenes/calendar";
@@ -27,7 +27,7 @@ function App() {
               <Route path="/user" element={<User />} />
               <Route path="/resort" element={<Resort />} />
               <Route path="/booking" element={<Booking />} />
-              {/* <Route path="/facilities" element={<Facilities />} /> */}
+              <Route path="/facilities" element={<Facilities />} />
               {/* <Route path="/rooms" element={<Rooms />} /> */}
               {/* <Route path="/geography" element={<Geography />} /> */}
               {/* <Route path="/calendar" element={<Calendar />} /> */}
