@@ -17,6 +17,7 @@ const facilitySchema = yup.object().shape({
 });
 
 const Facilities = () => {
+  const navigate = useNavigate();
   const isNonMobile = useMediaQuery("(min-width:600px)");
 
   const handleFormSubmit = async (values) => {
@@ -24,7 +25,9 @@ const Facilities = () => {
     try {
       axios
         .post("http://localhost:5000/admin/addFacilities", { ...values })
-        .then((response) => {});
+        .then((response) => {
+            navigate("/facilities")
+        });
     } catch (error) {
       console.log(error);
     }

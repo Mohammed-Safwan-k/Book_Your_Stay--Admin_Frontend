@@ -11,6 +11,7 @@ import Facilities from "./scenes/facilities";
 // import Rooms from "./scenes/rooms";
 // import Geography from "./scenes/geography";
 // import Calendar from "./scenes/calendar";
+// import Coupon from "./scenes/coupon";
 
 function App() {
   const [theme, colorMode] = useMode();
@@ -31,6 +32,7 @@ function App() {
               {/* <Route path="/rooms" element={<Rooms />} /> */}
               {/* <Route path="/geography" element={<Geography />} /> */}
               {/* <Route path="/calendar" element={<Calendar />} /> */}
+              {/* <Route path="/coupon" element={<Coupon />} /> */}
             </Routes>
           </main>
         </div>
