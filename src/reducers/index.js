@@ -1,7 +1,9 @@
 import { combineReducers } from "redux";
 
-import coupon from './coupon'
+import coupon from "./coupon";
+import user from "./user";
 
 export default combineReducers({
-    coupon,
-})
+  coupon,
+  user,
+});

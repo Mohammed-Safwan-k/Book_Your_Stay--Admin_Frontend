@@ -1,3 +1,4 @@
+import React, { useEffect } from "react";
 import { ColorModeContext, useMode } from "./theme";
 import { CssBaseline, ThemeProvider } from "@mui/material";
 import { Routes, Route } from "react-router-dom";
@@ -13,7 +14,18 @@ import Coupon from "./scenes/coupon";
 // import Geography from "./scenes/geography";
 // import Calendar from "./scenes/calendar";
 
+//REDUX
+import { useDispatch } from "react-redux";
+import { allCoupon } from "./actions/coupon";
+import { allUser } from "./actions/user";
 function App() {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(allCoupon());
+  }, [dispatch]);
+
+
   const [theme, colorMode] = useMode();
   return (
     <ColorModeContext.Provider value={colorMode}>
