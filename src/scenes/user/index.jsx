@@ -6,12 +6,19 @@ import AdminPanelSettingsOutlinedIcon from "@mui/icons-material/AdminPanelSettin
 import LockOpenOutlinedIcon from "@mui/icons-material/LockOpenOutlined";
 import SecurityOutlinedIcon from "@mui/icons-material/SecurityOutlined";
 import Header from "../../components/Header";
-import { useSelector } from "react-redux";
-
+import { useDispatch, useSelector } from "react-redux";
+import { useEffect } from "react";
+import { allUser } from "../../actions/user";
 
 const User = () => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(allUser());
+  }, [dispatch]);
 
   const user = useSelector((state) => state.user);
   console.log(user);
@@ -115,7 +122,6 @@ const User = () => {
           columns={columns}
           components={{ Toolbar: GridToolbar }}
           getRowId={(row) => row._id}
-
         />
       </Box>
     </Box>

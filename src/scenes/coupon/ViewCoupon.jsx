@@ -1,12 +1,21 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Box, useTheme } from "@mui/material";
 import { DataGrid, GridToolbar } from "@mui/x-data-grid";
 import { tokens } from "../../theme";
-import { useSelector } from "react-redux";
+
+//REDUX
+import { useDispatch, useSelector } from "react-redux";
+import { allCoupon } from "../../actions/coupon";
 
 const ViewCoupon = () => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(allCoupon());
+  }, [dispatch]);
 
   const coupon = useSelector((state) => state.coupon);
   console.log(coupon);
