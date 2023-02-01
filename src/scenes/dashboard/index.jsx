@@ -3,7 +3,10 @@ import Header from "../../components/Header";
 
 const Dashboard = () => {
   return (
-    <Box m="20px">
+    <Box
+      m="20px"
+      sx={{ height: "80vh", overflow: "hidden", overflowY: "scroll" }}
+    >
       <Box display="flex" justifyContent="space-between" alignItems="center">
         <Header
           title="DASHBOARD"

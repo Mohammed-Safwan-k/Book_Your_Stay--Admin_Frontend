@@ -68,7 +68,10 @@ const Booking = () => {
   ];
 
   return (
-    <Box m="20px">
+    <Box
+      m="20px"
+      sx={{ height: "80vh", overflow: "hidden", overflowY: "scroll" }}
+    >
       <Header title="Bookings" subtitle="Manage All Bookings" />
       <Box
         m="40px 0 0 0"

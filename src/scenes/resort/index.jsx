@@ -68,7 +68,7 @@ const Resort = () => {
   ];
 
   return (
-    <Box m="20px">
+    <Box m="20px" sx={{ height: "85vh", overflow: "hidden", overflowY: "scroll" }}>
       <Header title="Resort" subtitle="Manage Resorts and Hotels" />
       <Box
         m="40px 0 0 0"
