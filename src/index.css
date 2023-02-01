@@ -16,20 +16,23 @@ body,
 }
 
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 8px;
+  background-color: black;
 }
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: #e0e0e0;
+  background: #000000;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #888;
+  background: linear-gradient(transparent, #00ffea);
+  border-radius: 6px;
+  border-radius: 20px;
 }
 
 /* Handle on Hover */
-::-webkit-scrollbar-track:hover {
-  background: #555;
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(transparent, #00c6ff, transparent);
 }
