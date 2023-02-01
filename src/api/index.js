@@ -1,18 +1,20 @@
 import axios from "axios";
 
-export const fetchCoupons = () =>
-  axios.get(`http://localhost:5000/admin/allCoupon`);
-export const createCoupons = (newCoupon) =>
-  axios.post(`http://localhost:5000/admin/addCoupon`, newCoupon);
+const PORT = process.env.REACT_APP_PORT;
 
-export const allUsers = () => axios.get(`http://localhost:5000/admin/allUser`);
+export const fetchCoupons = () =>
+  axios.get(`${PORT}/allCoupon`);
+export const createCoupons = (newCoupon) =>
+  axios.post(`${PORT}/addCoupon`, newCoupon);
+
+export const allUsers = () => axios.get(`${PORT}/allUser`);
 
 export const allFacility = () =>
-  axios.get(`http://localhost:5000/admin/allFacilities`);
+  axios.get(`${PORT}/allFacilities`);
 export const addFacility = (facility) =>
-  axios.post(`http://localhost:5000/admin/addFacilities`, facility);
+  axios.post(`${PORT}/addFacilities`, facility);
 
 export const viewRoomType = () =>
-  axios.get(`http://localhost:5000/admin/allRoom`);
+  axios.get(`${PORT}/allRoom`);
 export const addRoomType = (roomtype) =>
-  axios.post(`http://localhost:5000/admin/addRoom`, roomtype);
+  axios.post(`${PORT}/addRoom`, roomtype);
