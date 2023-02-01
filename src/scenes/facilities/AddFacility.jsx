@@ -5,37 +5,34 @@ import * as yup from "yup";
 import useMediaQuery from "@mui/material/useMediaQuery";
 
 import { useDispatch } from "react-redux";
-import { createCoupon } from "../../actions/coupon";
+import { newFacility } from "../../actions/facility";
 
 const initialValues = {
-  couponName: "",
-  couponCode: "",
-  amount: "",
+  facility: "",
+  icon: "",
 };
 
-const couponSchema = yup.object().shape({
-  couponName: yup.string().required("required"),
-  couponCode: yup.string().required("required"),
-  amount: yup.string().required("required"),
+const facilitySchema = yup.object().shape({
+  facility: yup.string().required("required"),
+  icon: yup.string().required("required"),
 });
 
-const AddCoupon = () => {
+const AddFacility = () => {
   const isNonMobile = useMediaQuery("(min-width:600px)");
 
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
   const handleFormSubmit = async (values) => {
     // values.preventDefault()
-    dispatch(createCoupon(values))
+    dispatch(newFacility(values));
   };
 
-  const clear = () => {};
   return (
     <Box m="20px">
       <Formik
         onSubmit={handleFormSubmit}
         initialValues={initialValues}
-        validationSchema={couponSchema}
+        validationSchema={facilitySchema}
       >
         {({
           values,
@@ -58,48 +55,32 @@ const AddCoupon = () => {
                 fullWidth
                 variant="filled"
                 type="text"
-                label="Coupon Name"
+                label="Facility Type"
                 onBlur={handleBlur}
                 onChange={handleChange}
-                value={values.couponName}
-                name="couponName"
-                error={!!touched.couponName && !!errors.couponName}
-                helperText={touched.couponName && errors.couponName}
+                value={values.facility}
+                name="facility"
+                error={!!touched.facility && !!errors.facility}
+                helperText={touched.facility && errors.facility}
                 sx={{ gridColumn: "span 4" }}
               />
               <TextField
                 fullWidth
                 variant="filled"
                 type="text"
-                label="Coupon Code"
+                label="Icon"
                 onBlur={handleBlur}
                 onChange={handleChange}
-                value={values.couponCode}
-                name="couponCode"
-                error={!!touched.couponCode && !!errors.couponCode}
-                helperText={touched.couponCode && errors.couponCode}
-                sx={{ gridColumn: "span 4" }}
-              />
-              <TextField
-                fullWidth
-                variant="filled"
-                type="text"
-                label="Discount Percentage"
-                onBlur={handleBlur}
-                onChange={handleChange}
-                value={values.amount}
-                name="amount"
-                error={!!touched.amount && !!errors.amount}
-                helperText={touched.amount && errors.amount}
+                value={values.icon}
+                name="icon"
+                error={!!touched.icon && !!errors.icon}
+                helperText={touched.icon && errors.icon}
                 sx={{ gridColumn: "span 4" }}
               />
             </Box>
             <Box display="flex" justifyContent="end" mt="20px">
               <Button type="submit" color="secondary" variant="contained">
-                Add New Coupon
-              </Button>
-              <Button color="primary" onClick={clear} variant="contained">
-                Clear
+                Add New Facility
               </Button>
             </Box>
           </form>
@@ -109,4 +90,4 @@ const AddCoupon = () => {
   );
 };
 
-export default AddCoupon;
+export default AddFacility;

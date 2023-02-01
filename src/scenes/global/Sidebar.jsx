@@ -159,7 +159,7 @@ const Sidebar = () => {
             />
             <Item
               title="Manage Room Types"
-              to="/rooms"
+              to="/roomtype"
               icon={<ApartmentOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}

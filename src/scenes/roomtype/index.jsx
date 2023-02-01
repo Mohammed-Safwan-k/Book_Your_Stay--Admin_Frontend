@@ -1,23 +1,24 @@
+import React from "react";
 import { Box } from "@mui/material";
 import Header from "../../components/Header";
-import AddFacility from "./AddFacility";
-import ViewFacility from "./ViewFacility";
+import AddRoom from "./AddRoom";
+import ViewRoom from "./ViewRoom";
 
-const Dashboard = () => {
+const RoomType = () => {
   return (
     <Box
       m="20px"
       sx={{ height: "80vh", overflow: "hidden", overflowY: "scroll" }}
     >
       <Box display="flex" justifyContent="space-between" alignItems="center">
-        <Header title="Facilities" subtitle=" Add and Manage Facilities" />
+        <Header title="Room Type" subtitle=" Add and Manage Room Type" />
       </Box>
       <Box>
-        <AddFacility />
-        <ViewFacility />
+        <AddRoom />
+        <ViewRoom />
       </Box>
     </Box>
   );
 };
 
-export default Dashboard;
+export default RoomType;

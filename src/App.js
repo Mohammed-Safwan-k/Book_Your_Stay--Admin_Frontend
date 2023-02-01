@@ -10,7 +10,7 @@ import Resort from "./scenes/resort";
 import Booking from "./scenes/booking";
 import Facilities from "./scenes/facilities";
 import Coupon from "./scenes/coupon";
-// import Rooms from "./scenes/rooms";
+import RoomType from "./scenes/roomtype";
 // import Geography from "./scenes/geography";
 // import Calendar from "./scenes/calendar";
 
@@ -31,7 +31,7 @@ function App() {
               <Route path="/booking" element={<Booking />} />
               <Route path="/facilities" element={<Facilities />} />
               <Route path="/coupon" element={<Coupon />} />
-              {/* <Route path="/rooms" element={<Rooms />} /> */}
+              <Route path="/roomtype" element={<RoomType />} />
               {/* <Route path="/geography" element={<Geography />} /> */}
               {/* <Route path="/calendar" element={<Calendar />} /> */}
             </Routes>
