@@ -2,6 +2,9 @@ import React from "react";
 import { ColorModeContext, useMode } from "./theme";
 import { CssBaseline, ThemeProvider } from "@mui/material";
 import { Routes, Route } from "react-router-dom";
+
+// IMPORT PAGES 
+import PageNotFound from "./scenes/PageNotFound"
 import Topbar from "./scenes/global/Topbar";
 import Sidebar from "./scenes/global/Sidebar";
 import Dashboard from "./scenes/dashboard";
@@ -11,6 +14,7 @@ import Booking from "./scenes/booking";
 import Facilities from "./scenes/facilities";
 import Coupon from "./scenes/coupon";
 import RoomType from "./scenes/roomtype";
+
 // import Geography from "./scenes/geography";
 // import Calendar from "./scenes/calendar";
 
@@ -25,6 +29,7 @@ function App() {
           <main className="content">
             <Topbar />
             <Routes>
+              <Route path="*" element={<PageNotFound />} />
               <Route path="/" element={<Dashboard />} />
               <Route path="/user" element={<User />} />
               <Route path="/resort" element={<Resort />} />
